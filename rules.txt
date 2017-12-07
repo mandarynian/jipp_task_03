@@ -1,0 +1,7 @@
+Zasady gry jednoreczny bandyta.
+
+1. Jedna gra kosztuje 2PLN.
+2. Po kazdym pociagnieciu raczka mozliwe jest wyplacenie srodkow.
+3. Wygrywasz jezeli na ekranie pojawia sie 3 takie same znaki.
+
+POWODZENIA!
