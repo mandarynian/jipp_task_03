@@ -4,6 +4,9 @@
 #include <fstream>
 #include <string>
 #include <stdio.h>
+#include <windows.h>
+#include <conio.h>
+#include <stdlib.h>
 
 class Game
 {
@@ -12,8 +15,8 @@ class Game
     ~Game();
 
     void Menu();
-  //  void GeneratedResult();
-  //  void GetTheMoney(int &);
+    void Roll();
+    int GiveMeMyMoneyBack();
    // void NextSte();
     void ShowRules();
   //  void WitherMoney();

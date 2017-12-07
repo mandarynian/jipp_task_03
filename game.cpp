@@ -1,28 +1,24 @@
 #include "game.h"
 
-#include <windows.h>
-#include <conio.h>
-#include <stdlib.h>
-
+// konst
 Game::Game()
 {
 }
-
+// dest
 Game::~Game()
 {
 }
-
+// menu gry 
 void Game::Menu()
 {
   system("cls");
   std::cout << "= = = = = = = = = = = = = = =" << std::endl;
   std::cout << "    JEDNOREKI BANDYTA" << std::endl << std::endl;
-  std::cout << "  1. Start." << std::endl;
-  std::cout << "  2. Rzuc monete." << std::endl;
-  std::cout << "  3. Pociagnij za raczke." << std::endl;
-  std::cout << "  4. Wyswietl reguly." << std::endl;
-  std::cout << "  5. Wyplac pieniadze." << std::endl;
-  std::cout << "  6. Wyjscie z programu." << std::endl << std::endl;
+  std::cout << "  1. Rzuc monete." << std::endl;
+  std::cout << "  2. Pociagnij za raczke." << std::endl;
+  std::cout << "  3. Wyswietl reguly." << std::endl;
+  std::cout << "  4. Wyplac pieniadze." << std::endl;
+  std::cout << "  5. Wyjscie z programu." << std::endl << std::endl;
   std::cout << "= = = = = = = = = = = = = = =" << std::endl;
   char c;
   c = getch();
@@ -32,18 +28,15 @@ void Game::Menu()
       Menu();
     break;
     case '2':
-      Menu();
+      Roll();
     break;
     case '3':
-      Menu();
-    break;
-    case '4':
       ShowRules();
     break;
-    case '5':
-      Menu();
+    case '4':
+      GiveMeMyMoneyBack();
     break;
-    case '6':
+    case '5':
       exit(0);
     break;
     default:
@@ -51,7 +44,7 @@ void Game::Menu()
     break;
   } 
 }
-
+// pokazuje zasady z pliku 
 void Game::ShowRules()
 {
   system("cls");
@@ -71,4 +64,29 @@ void Game::ShowRules()
     std::cout << "Nie udalo sie otworzyc zasad.\n";
   system("pause");
   Menu();
+}
+// wybiieramy pieniądze 
+int Game::GiveMeMyMoneyBack()
+{
+  std::cout << "Wybierasz: " << m_nCurrentMoney << std::endl;
+  return m_nCurrentMoney;
+}
+// metoda odpiowada za losowanie i wyswietlanie wyniku 
+void Game::Roll()
+{
+  system("cls");
+  // loading screan 
+  std::cout << "Losowanie w toku..." << std::endl << std::endl;
+  Sleep(400);
+  system("cls");
+  for (int i = 0;i < 100 ;i++)
+  {
+    std::cout << "= = = = = = = = = = = = = = =" << std::endl;
+    std::cout << "   " << i << "\t" << i << "\t" << i << std::endl;
+    std::cout << "= = = = = = = = = = = = = = =" << std::endl;
+    Sleep(100);
+    system("cls");
+  }
+
+  system("pause");
 }
