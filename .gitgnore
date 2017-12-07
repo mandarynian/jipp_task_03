@@ -1,0 +1,6 @@
+# Compiled source #
+###################
+
+*.exe
+*.json
+*.vscode
