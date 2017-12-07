@@ -99,6 +99,7 @@ void Game::AddCoin(int nCoin)
 void Menu()
 {
   Game *GamePlayer;
+  GamePlayer = new Game();
 
   for (;;)
   {
@@ -120,10 +121,10 @@ void Menu()
       break;
       case '2':
 
-        //if(GamePlayer->CheckCoin())
+        if(GamePlayer->CheckCoin())
           GamePlayer->Roll();
-        //else std::cout << "Nie masz dosc funduszy.\n";
-
+        else std::cout << "Nie masz dosc funduszy.\n";
+        system("pause");
       break;
       case '3':
         ShowRules();
