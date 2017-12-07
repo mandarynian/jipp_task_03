@@ -3,11 +3,23 @@
 // konst
 Game::Game()
 {
+  Init();
 }
 // dest
 Game::~Game()
 {
 }
+// init game properties
+void Game::Init()
+{
+  m_nCurrentMoney = 0;
+  m_nDelay = 70;
+  m_nLevel = 10;
+  m_nRandomOne = 0;
+  m_nRandomTwo = 0;
+  m_nRandomTree = 0;
+}
+
 // menu gry 
 void Game::Menu()
 {
@@ -75,18 +87,27 @@ int Game::GiveMeMyMoneyBack()
 void Game::Roll()
 {
   system("cls");
-  // loading screan 
-  std::cout << "Losowanie w toku..." << std::endl << std::endl;
+  std::cout << "Rozpoczynanie losowania..." << std::endl << std::endl;
   Sleep(400);
   system("cls");
-  for (int i = 0;i < 100 ;i++)
+  srand (time(NULL));
+
+  int nRand1 = 0, nRand2 = 0, nRand3 = 0;
+
+  for (int i = 0;i < 70 ;i++)
   {
-    std::cout << "= = = = = = = = = = = = = = =" << std::endl;
-    std::cout << "   " << i << "\t" << i << "\t" << i << std::endl;
-    std::cout << "= = = = = = = = = = = = = = =" << std::endl;
-    Sleep(100);
+    if (i < 30)
+      nRand1 = rand()%10;
+    if (i < 50)
+      nRand2 = rand()%10;  
+    nRand3 = rand()%10;
     system("cls");
+    std::cout << "= = = = = = = = = = = = = = =" << std::endl;
+    std::cout << "     " << nRand1 << "    " << nRand2 << "    " << nRand3 << std::endl;
+    std::cout << "= = = = = = = = = = = = = = =" << std::endl;
+    Sleep(70);
   }
 
   system("pause");
+  Menu();
 }

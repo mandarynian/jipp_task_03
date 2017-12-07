@@ -7,6 +7,7 @@
 #include <windows.h>
 #include <conio.h>
 #include <stdlib.h>
+#include <time.h> 
 
 class Game
 {
@@ -14,6 +15,7 @@ class Game
     Game();
     ~Game();
 
+    void Init();
     void Menu();
     void Roll();
     int GiveMeMyMoneyBack();
@@ -24,4 +26,10 @@ class Game
 
   private:
   int m_nCurrentMoney; // odpowiada za przechowywanie inf. o obecnym stanie portwela gracza 
+  int m_nDelay;
+  int m_nLevel;
+
+  int m_nRandomOne;
+  int m_nRandomTwo;
+  int m_nRandomTree;
 };
