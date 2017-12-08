@@ -11,8 +11,9 @@ public:
   int GiveMeMyMoneyBack();
   void Roll();  
   bool BuyTicket();
-  void AddCoin(int);
-  bool CheckCoin();
+  void AddCoin();
+  bool GetCoin();
+  int GetMoneyState();
 
 
   void SetRandOne(int);
@@ -22,6 +23,7 @@ public:
 
 private:
   int m_nCurrentMoney;            // odpowiada za przechowywanie inf. o obecnym stanie portwela gracza 
+  int m_nDifficultyLevel;         // poziom trudności 
 };
 
 void Menu();

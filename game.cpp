@@ -40,10 +40,10 @@ void Game::Roll()
   for (int i = 0;i < 70 ;i++)
   {
     if (i < 30)
-      nRand1 = rand()%6;
+      nRand1 = rand()%9;
     if (i < 50)
-      nRand2 = rand()%6;  
-    nRand3 = rand()%6;
+      nRand2 = rand()%9;  
+    nRand3 = rand()%9;
     system("cls");
     std::cout << "= = = = = = = = = = = = = = =" << std::endl;
     std::cout << "     " << nRand1 << "    " << nRand2 << "    " << nRand3 << std::endl;
@@ -61,10 +61,8 @@ void Game::Roll()
   {
     std::cout << "PODWOJENIE!!";
     m_nCurrentMoney = m_nCurrentMoney *2;
-  }
-    
+  }  
   system("pause");
-
   return;
 }
 
@@ -77,20 +75,48 @@ bool Game::BuyTicket()
   return true;
 }
 
-bool Game::CheckCoin()
+bool Game::GetCoin()
 {
   if (m_nCurrentMoney < 2)
     return false;  
   
+  m_nCurrentMoney -= 2;
   return true;
 }
 
-void Game::AddCoin(int nCoin)
+void Game::AddCoin()
 { 
-  if (nCoin != 1 || nCoin != 2 || nCoin != 5)
-    return;
-  
-  m_nCurrentMoney += nCoin;
+  char c;
+  system("cls");
+  std::cout << "= = = = = = = = = = = = = = =" << std::endl;
+  std::cout << " Posiadasz: " << m_nCurrentMoney << " PLN." << std::endl << std::endl;
+  std::cout << "  1. Wrzuc 1 PLN." << std::endl;
+  std::cout << "  2. Wrzuc 2 PLN." << std::endl;
+  std::cout << "  3. Wrzuc 5 PLN." << std::endl;
+  std::cout << "  4. Wstecz." << std::endl << std::endl;
+  std::cout << "= = = = = = = = = = = = = = =" << std::endl;
+
+  c = getch();
+
+  switch (c)
+  {
+    case '1':
+    m_nCurrentMoney += 1;
+    break;
+    case '2':
+    m_nCurrentMoney += 2;
+    break;
+    case '3':
+    m_nCurrentMoney += 5;
+    break;
+    default:break;
+  }
+
+}
+
+int Game::GetMoneyState()
+{
+  return m_nCurrentMoney;
 }
 
 
@@ -111,23 +137,22 @@ void Menu()
     std::cout << "  3. Wyswietl reguly." << std::endl;
     std::cout << "  4. Wyplac pieniadze." << std::endl;
     std::cout << "  5. Wyjscie z programu." << std::endl << std::endl;
+    std::cout << "  Stan konta: " << GamePlayer->GetMoneyState() << " PLN." << std::endl;
     std::cout << "= = = = = = = = = = = = = = =" << std::endl;
     char c;
     c = getch();
     switch (c)
     {
       case '1':
-        Menu();
+      GamePlayer->AddCoin();
       break;
       case '2':
-
-        if(GamePlayer->CheckCoin())
-          GamePlayer->Roll();
-        else std::cout << "Nie masz dosc funduszy.\n";
-        system("pause");
+      if(GamePlayer->GetCoin())
+        GamePlayer->Roll();
+      else std::cout << "Wrzuc monete.\n";
       break;
       case '3':
-        ShowRules();
+      ShowRules();
       break;
       case '4':
   //      GiveMeMyMoneyBack();
@@ -136,7 +161,6 @@ void Menu()
         exit(0);
       break;
       default:
-        Menu();
       break;
     }
   }
