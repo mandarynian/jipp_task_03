@@ -1,7 +1,10 @@
 Zasady gry jednoreczny bandyta.
 
-1. Jedna gra kosztuje 2PLN.
-2. Po kazdym pociagnieciu raczka mozliwe jest wyplacenie srodkow.
-3. Wygrywasz jezeli na ekranie pojawia sie 3 takie same znaki.
+1. Koszt gry 2PLN.
+2. Automat przyjmuje 1 (PLN), 2 (PLN) oraz 5 (PLN) zlotowe monety.
+3. Po kazdym pociagnieciu raczka mozliwe jest wyplacenie srodkow.
+4. Dwie pary to zwiekszenie o 5 PLN puli wygranej.
+5. Wszystkie takie same to zwiekszenie o 5 PLN oraz podwojenie puli wygranej.
+6. Wyplata mozliwa z poziomu menu.
 
 POWODZENIA!

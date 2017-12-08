@@ -142,15 +142,15 @@ void Menu()
   for (;;)
   {
     system("cls");
-    std::cout << "= = = = = = = = = = = = = = =" << std::endl;
+    std::cout << "= = = = = = = = = = = = = =" << std::endl;
     std::cout << "    JEDNOREKI BANDYTA" << std::endl << std::endl;
-    std::cout << "  1. Rzuc monete." << std::endl;
+    std::cout << "  1. Wrzuc monete." << std::endl;
     std::cout << "  2. Pociagnij za raczke." << std::endl;
     std::cout << "  3. Wyswietl reguly." << std::endl;
     std::cout << "  4. Wyplac pieniadze." << std::endl;
-    std::cout << "  5. Wyjscie z programu." << std::endl << std::endl;
-    std::cout << "  Stan konta: " << GamePlayer->GetMoneyState() << " PLN." << std::endl;
-    std::cout << "= = = = = = = = = = = = = = =" << std::endl;
+    std::cout << "  5. Exit." << std::endl << std::endl;
+    std::cout << "    Stan konta: " << GamePlayer->GetMoneyState() << " PLN." << std::endl;
+    std::cout << "= = = = = = = = = = = = = =" << std::endl;
     char c;
     c = getch();
     switch (c)
