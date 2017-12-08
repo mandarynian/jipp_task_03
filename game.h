@@ -3,10 +3,8 @@
 class Game
 {
 public:
-  Game(int = 0);
+  Game(int = 0, int = 99);
   ~Game();
-
-  //void Menu();
   
   int GiveMeMyMoneyBack();
   void Roll();  
@@ -14,12 +12,7 @@ public:
   void AddCoin();
   bool GetCoin();
   int GetMoneyState();
-
-
-  void SetRandOne(int);
-  void SetRandTwo(int);
-  void SetRandThre(int);
-
+  void ResetMoney();
 
 private:
   int m_nCurrentMoney;            // odpowiada za przechowywanie inf. o obecnym stanie portwela gracza 

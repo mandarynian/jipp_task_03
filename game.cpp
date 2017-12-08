@@ -11,7 +11,7 @@
 
 
 // metody klasy 
-Game::Game(int nCoin) : m_nCurrentMoney(nCoin)
+Game::Game(int nCoin, int nDiff) : m_nCurrentMoney(nCoin), m_nDifficultyLevel(nDiff)
 {}
 
 Game::~Game()
@@ -20,11 +20,21 @@ Game::~Game()
 
 int Game::GiveMeMyMoneyBack()
 {
+  system("cls");
   std::cout << "Wybierasz: " << m_nCurrentMoney << std::endl;
-  if (m_nCurrentMoney < 0)
+  if (m_nCurrentMoney > 0)
+  {
+    std::cout << "Wyplacasz: " << m_nCurrentMoney << " PLN!" << std::endl;
+    system("pause");
     return m_nCurrentMoney;
-  else 
-    return 0;
+  } 
+
+  return 0;
+}
+
+void Game::ResetMoney()
+{
+  m_nCurrentMoney = 0;
 }
 
 void Game::Roll()
@@ -40,10 +50,10 @@ void Game::Roll()
   for (int i = 0;i < 70 ;i++)
   {
     if (i < 30)
-      nRand1 = rand()%9;
+      nRand1 = rand()%(m_nDifficultyLevel/10);
     if (i < 50)
-      nRand2 = rand()%9;  
-    nRand3 = rand()%9;
+      nRand2 = rand()%(m_nDifficultyLevel/10);  
+    nRand3 = rand()%(m_nDifficultyLevel/10);
     system("cls");
     std::cout << "= = = = = = = = = = = = = = =" << std::endl;
     std::cout << "     " << nRand1 << "    " << nRand2 << "    " << nRand3 << std::endl;
@@ -54,7 +64,7 @@ void Game::Roll()
   if (nRand1 == nRand2 || nRand1 == nRand3 || nRand2 == nRand3)
   {
     std::cout << "Trafiony.\n";
-    m_nCurrentMoney += 20;
+    m_nCurrentMoney += 5;
   }
   
   if (nRand1 == nRand2 && nRand1 == nRand3)
@@ -155,7 +165,8 @@ void Menu()
       ShowRules();
       break;
       case '4':
-  //      GiveMeMyMoneyBack();
+      GamePlayer->GiveMeMyMoneyBack();
+      GamePlayer->ResetMoney();
       break;
       case '5':
         exit(0);
