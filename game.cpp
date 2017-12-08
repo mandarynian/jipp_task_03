@@ -9,15 +9,16 @@
 #include <stdlib.h>
 #include <time.h> 
 
-
-// metody klasy 
+/////////////////////
+// METODY KLASY GAME 
+////
 Game::Game(int nCoin, int nDiff) : m_nCurrentMoney(nCoin), m_nDifficultyLevel(nDiff)
 {}
-
+//---------------------------------------------------------------------------------
 Game::~Game()
 {
 }
-
+//---------------------------------------------------------------------------------
 int Game::GiveMeMyMoneyBack()
 {
   system("cls");
@@ -31,12 +32,12 @@ int Game::GiveMeMyMoneyBack()
 
   return 0;
 }
-
+//---------------------------------------------------------------------------------
 void Game::ResetMoney()
 {
   m_nCurrentMoney = 0;
 }
-
+//---------------------------------------------------------------------------------
 void Game::Roll()
 {
   system("cls");
@@ -60,7 +61,7 @@ void Game::Roll()
     std::cout << "= = = = = = = = = = = = = = =" << std::endl;
     Sleep(50);
   }
-
+//---------------------------------------------------------------------------------
   if (nRand1 == nRand2 || nRand1 == nRand3 || nRand2 == nRand3)
   {
     std::cout << "Trafiony.\n";
@@ -75,7 +76,7 @@ void Game::Roll()
   system("pause");
   return;
 }
-
+//---------------------------------------------------------------------------------
 bool Game::BuyTicket()
 {
   if (m_nCurrentMoney < 2)
@@ -84,7 +85,7 @@ bool Game::BuyTicket()
   m_nCurrentMoney -= 2;
   return true;
 }
-
+//---------------------------------------------------------------------------------
 bool Game::GetCoin()
 {
   if (m_nCurrentMoney < 2)
@@ -93,7 +94,7 @@ bool Game::GetCoin()
   m_nCurrentMoney -= 2;
   return true;
 }
-
+//---------------------------------------------------------------------------------
 void Game::AddCoin()
 { 
   char c;
@@ -123,15 +124,16 @@ void Game::AddCoin()
   }
 
 }
-
+//---------------------------------------------------------------------------------
 int Game::GetMoneyState()
 {
   return m_nCurrentMoney;
 }
+//---------------------------------------------------------------------------------
 
-
-// funckje automatu do gry 
-// menu gry 
+/////////////////////
+// FUNCKJE AUTOMATU
+////
 void Menu()
 {
   Game *GamePlayer;
@@ -177,7 +179,7 @@ void Menu()
   }
    
 }
-
+//---------------------------------------------------------------------------------
 void ShowRules()
 {
   system("cls");
@@ -198,3 +200,4 @@ void ShowRules()
   system("pause");
   Menu();
 }
+//---------------------------------------------------------------------------------

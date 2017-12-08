@@ -1,5 +1,6 @@
-// jednoręki bandyta - gra 
-
+//////////////////
+//  KLASA GAME 
+////
 class Game
 {
 public:
