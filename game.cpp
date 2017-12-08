@@ -56,9 +56,9 @@ void Game::Roll()
       nRand2 = rand()%(m_nDifficultyLevel/10);  
     nRand3 = rand()%(m_nDifficultyLevel/10);
     system("cls");
-    std::cout << "= = = = = = = = = = = = = = =" << std::endl;
-    std::cout << "     " << nRand1 << "    " << nRand2 << "    " << nRand3 << std::endl;
-    std::cout << "= = = = = = = = = = = = = = =" << std::endl;
+    std::cout << "= = = = = = = = = = = = = =" << std::endl;
+    std::cout << "       " << nRand1 << "    " << nRand2 << "    " << nRand3 << std::endl;
+    std::cout << "= = = = = = = = = = = = = =" << std::endl << std::endl;
     Sleep(50);
   }
 //---------------------------------------------------------------------------------
@@ -99,13 +99,13 @@ void Game::AddCoin()
 { 
   char c;
   system("cls");
-  std::cout << "= = = = = = = = = = = = = = =" << std::endl;
-  std::cout << " Posiadasz: " << m_nCurrentMoney << " PLN." << std::endl << std::endl;
+  std::cout << "= = = = = = = = = = = = = =" << std::endl;
+  std::cout << "    POSIADASZ: " << m_nCurrentMoney << " PLN." << std::endl << std::endl;
   std::cout << "  1. Wrzuc 1 PLN." << std::endl;
   std::cout << "  2. Wrzuc 2 PLN." << std::endl;
   std::cout << "  3. Wrzuc 5 PLN." << std::endl;
   std::cout << "  4. Wstecz." << std::endl << std::endl;
-  std::cout << "= = = = = = = = = = = = = = =" << std::endl;
+  std::cout << "= = = = = = = = = = = = = =" << std::endl;
 
   c = getch();
 
@@ -149,7 +149,7 @@ void Menu()
     std::cout << "  3. Wyswietl reguly." << std::endl;
     std::cout << "  4. Wyplac pieniadze." << std::endl;
     std::cout << "  5. Exit." << std::endl << std::endl;
-    std::cout << "    Stan konta: " << GamePlayer->GetMoneyState() << " PLN." << std::endl;
+    std::cout << "    STAN KONTA: " << GamePlayer->GetMoneyState() << " PLN." << std::endl;
     std::cout << "= = = = = = = = = = = = = =" << std::endl;
     char c;
     c = getch();
